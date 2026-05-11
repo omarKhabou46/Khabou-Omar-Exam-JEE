@@ -21,7 +21,6 @@ public class ContratAssuranceDTO {
     private double montantCotisation;
     private int dureeContart;
     private double tauxCouverture;
-    private List<PaiementsDTO> paiementsListDTO;
 }
 
 
