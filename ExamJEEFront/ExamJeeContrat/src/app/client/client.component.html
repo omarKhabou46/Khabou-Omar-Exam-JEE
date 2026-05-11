@@ -1,0 +1,40 @@
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-header">
+      <h3>Client</h3>
+    </div>
+    <div class="card-body">
+      @if (clients | async; as listClient) {
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>nom</th>
+            <th>email</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+            @for (client of listClient; track client.id) {
+              <tr>
+                <td>{{client.id}}</td>
+                <td>{{client.nom}}</td>
+                <td>{{client.email}}</td>
+                <td>
+                 <button class="btn btn-danger me-2" (click)="handleDeleteClient(client.id)">
+                   <i class="bi bi-trash"></i>
+                 </button>
+
+                  <button class="btn btn-primary" (click)="handleShowContrats(client)">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+
+    </div>
+  </div>
+</div>

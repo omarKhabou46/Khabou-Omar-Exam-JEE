@@ -15,6 +15,7 @@ public class Client {
     private Long id;
     private String nom;
     private String email;
+    private boolean active = true;
     @OneToMany(mappedBy = "client")
     private List<ContratAssurance> contratAssuranceList;
 }

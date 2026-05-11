@@ -30,7 +30,7 @@ public class ClientService implements IClientService {
 
     @Override
     public List<ClientDTO> getAllClients() {
-        List<Client> clients = clientRepo.findAll();
+        List<Client> clients = clientRepo.findClientsByActive(true);
         return clients.stream().map(clientMapper::fromClient).toList();
     }
 
@@ -56,5 +56,12 @@ public class ClientService implements IClientService {
                 return contratAssuaranceMapper.fromContratSante(contratAssuranceSante);
             }
         }).toList();
+    }
+
+    @Override
+    public void deleteClient(long clientId) {
+        Client client = clientRepo.findById(clientId).orElseThrow(() -> new ClientNotFoundException("not found"));
+        client.setActive(false);
+        clientRepo.save(client);
     }
 }

@@ -10,4 +10,5 @@ public interface IClientService {
     List<ClientDTO> getAllClients();
     ClientDTO getClientByNom(String nom);
     List<ContratAssuranceDTO> getListContratbyClientId(long clientId);
+    void deleteClient(long clientId);
 }

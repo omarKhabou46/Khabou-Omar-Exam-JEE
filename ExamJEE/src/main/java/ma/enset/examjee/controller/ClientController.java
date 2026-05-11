@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/clients")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class ClientController {
     private final IClientService clientService;
 
@@ -35,6 +36,11 @@ public class ClientController {
     @GetMapping("/{id}/contrats")
     public ResponseEntity<List<ContratAssuranceDTO>> getContratAssuranceByCid(@PathVariable long id) {
         return new ResponseEntity<>(clientService.getListContratbyClientId(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteClient(@PathVariable long id) {
+        clientService.deleteClient(id);
     }
 
 }
