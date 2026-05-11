@@ -1,20 +1,18 @@
-package ma.enset.examjee.entity;
+package ma.enset.examjee.dto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.enset.examjee.entity.Client;
+import ma.enset.examjee.entity.Paiements;
 import ma.enset.examjee.entity.enumiration.StatusContrat;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Data @AllArgsConstructor @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type", length = 30)
-public class ContratAssurance {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+public class ContratAssuranceDTO {
     private Long id;
     private LocalDate dateSouscription;
     @Enumerated(value = EnumType.STRING)
@@ -23,10 +21,7 @@ public class ContratAssurance {
     private double montantCotisation;
     private int dureeContart;
     private double tauxCouverture;
-    @ManyToOne
-    private Client client;
-    @OneToMany(mappedBy = "contartAssurance")
-    private List<Paiements> paiementsList;
+    private List<PaiementsDTO> paiementsListDTO;
 }
 
 

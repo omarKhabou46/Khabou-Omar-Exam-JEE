@@ -1,4 +1,4 @@
-package ma.enset.examjee.entity;
+package ma.enset.examjee.dto;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,14 +8,9 @@ import ma.enset.examjee.entity.enumiration.TypePaiement;
 
 import java.time.LocalDate;
 
-@Entity
-@Data @AllArgsConstructor @NoArgsConstructor
-public class Paiements {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+public class PaiementsDTO {
     private Long id;
     private LocalDate date;
-    @Enumerated(value = EnumType.STRING)
     private TypePaiement typePaiement;
-    @ManyToOne
-    private ContratAssurance contartAssurance;
 }
