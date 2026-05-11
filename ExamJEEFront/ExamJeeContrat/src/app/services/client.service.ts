@@ -23,4 +23,8 @@ export class ClientService {
   getContratAssuranceById(id: any): Observable<ContratAssuranceModel[]> {
     return this.http.get<ContratAssuranceModel[]>(`${this.host}/${id}/contrats`);
   }
+
+  saveClient(client: ClientModel) {
+    return this.http.post(this.host, client);
+  }
 }

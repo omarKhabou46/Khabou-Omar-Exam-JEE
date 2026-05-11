@@ -8,9 +8,28 @@
         <table class="table">
           <thead>
           <tr>
-
+            <th>id</th>
+            <th>dateSouscription</th>
+            <th>statusContrat</th>
+            <th>dateValidation</th>
+            <th>montantCotisation</th>
+            <th>dureeContart</th>
+            <th>tauxCouverture</th>
           </tr>
           </thead>
+          <tbody>
+            @for (contrat of contratAssurances; track contrat.id) {
+             <tr>
+               <td>{{contrat.id}}</td>
+               <td>{{contrat.dateSouscription | date: 'dd/MM/yyyy'}}</td>
+               <td>{{contrat.statusContrat}}</td>
+               <td>{{contrat.dateValidation | date: 'dd/MM/yyyy'}}</td>
+               <td>{{contrat.montantCotisation}}</td>
+               <td>{{contrat.dureeContart}}</td>
+               <td>{{contrat.tauxCouverture | number:'1.0-2'}}</td>
+             </tr>
+            }
+          </tbody>
         </table>
       }
     </div>

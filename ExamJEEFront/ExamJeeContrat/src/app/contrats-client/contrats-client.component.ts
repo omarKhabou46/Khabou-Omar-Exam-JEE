@@ -3,12 +3,14 @@ import {ActivatedRoute} from '@angular/router';
 import {ContratAssuranceModel} from '../model/ContratAssurance.model';
 import {Observable} from 'rxjs';
 import {ClientService} from '../services/client.service';
-import {AsyncPipe} from '@angular/common';
+import {AsyncPipe, DatePipe, DecimalPipe} from '@angular/common';
 
 @Component({
   selector: 'app-contrats-client',
   imports: [
-    AsyncPipe
+    AsyncPipe,
+    DatePipe,
+    DecimalPipe
   ],
   templateUrl: './contrats-client.component.html',
   styleUrl: './contrats-client.component.css'
@@ -28,7 +30,7 @@ export class ContratsClientComponent implements OnInit {
     this.getContratsByClientsId(this.id);
   }
 
-  getContratsByClientsId(id: any) {
+  getContratsByClientsId(id: number) {
      this.contarts = this.clientService.getContratAssuranceById(id);
   }
 

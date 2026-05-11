@@ -43,4 +43,8 @@ export class ClientComponent implements OnInit {
   handleShowContrats(client: ClientModel) {
      this.route.navigateByUrl(`/contratsClients/${client.id}`);
   }
+
+  addClient() {
+    this.route.navigateByUrl("/newClient");
+  }
 }

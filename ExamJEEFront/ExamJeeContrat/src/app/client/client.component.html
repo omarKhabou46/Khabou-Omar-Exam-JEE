@@ -1,7 +1,12 @@
 <div class="container mt-2">
   <div class="card">
     <div class="card-header">
-      <h3>Client</h3>
+      <div class="d-flex justify-content-between">
+        <h3>Client</h3>
+        <button class="btn btn-primary w-15" (click)="addClient()"><i class="bi bi-plus"></i>
+        <span>ajouter</span>
+        </button>
+      </div>
     </div>
     <div class="card-body">
       @if (clients | async; as listClient) {
