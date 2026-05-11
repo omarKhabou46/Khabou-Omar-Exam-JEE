@@ -6,7 +6,7 @@ import lombok.Data;
 import ma.enset.examjee.entity.ContratAssurance;
 
 @Data
-public class ContartAssuranceAutomobileDTO extends ContratAssuranceDTO {
+public class ContratAssuranceAutomobileDTO extends ContratAssuranceDTO {
     private long numeroImmatriculation;
     private String marque;
     private String modele;

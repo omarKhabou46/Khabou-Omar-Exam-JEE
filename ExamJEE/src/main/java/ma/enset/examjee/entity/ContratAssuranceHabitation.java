@@ -10,7 +10,7 @@ import ma.enset.examjee.entity.enumiration.TypeLogement;
 @Entity
 @Data
 @DiscriminatorValue("HABITATION")
-public class ContartAssuranceHabitation extends ContratAssurance{
+public class ContratAssuranceHabitation extends ContratAssurance{
    @Enumerated(value = EnumType.STRING)
    private TypeLogement typeLogement;
    private String addresse;

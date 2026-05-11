@@ -7,7 +7,7 @@ import lombok.Data;
 @Entity
 @Data
 @DiscriminatorValue("AUTOMOBILE")
-public class ContartAssuranceAutomobile extends ContratAssurance{
+public class ContratAssuranceAutomobile extends ContratAssurance{
 
     private long numeroImmatriculation;
     private String marque;

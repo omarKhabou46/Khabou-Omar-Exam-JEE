@@ -11,7 +11,7 @@ import ma.enset.examjee.entity.enumiration.TypeLogement;
 @Entity
 @Data
 @DiscriminatorValue("SANTE")
-public class ContartAssuranceSante extends ContratAssurance{
+public class ContratAssuranceSante extends ContratAssurance{
    @Enumerated(value = EnumType.STRING)
    private NiveauCouverture niveauCouverture;
    private int nbPersonne;

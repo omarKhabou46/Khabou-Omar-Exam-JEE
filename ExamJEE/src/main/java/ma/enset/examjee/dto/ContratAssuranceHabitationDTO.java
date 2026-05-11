@@ -9,7 +9,7 @@ import ma.enset.examjee.entity.ContratAssurance;
 import ma.enset.examjee.entity.enumiration.TypeLogement;
 
 @Data
-public class ContartAssuranceHabitationDTO extends ContratAssuranceDTO {
+public class ContratAssuranceHabitationDTO extends ContratAssuranceDTO {
    @Enumerated(value = EnumType.STRING)
    private TypeLogement typeLogement;
    private String addresse;

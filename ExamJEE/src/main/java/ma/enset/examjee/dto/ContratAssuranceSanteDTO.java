@@ -9,7 +9,7 @@ import ma.enset.examjee.entity.ContratAssurance;
 import ma.enset.examjee.entity.enumiration.NiveauCouverture;
 
 @Data
-public class ContartAssuranceSanteDTO extends ContratAssuranceDTO {
+public class ContratAssuranceSanteDTO extends ContratAssuranceDTO {
    @Enumerated(value = EnumType.STRING)
    private NiveauCouverture niveauCouverture;
    private int nbPersonne;
